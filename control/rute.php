@@ -11,14 +11,21 @@ if(!empty($_GET["p"]))
 		{
 			$user = $_POST["user"];
 			$pass = $_POST["pass"];
+            $waktu = date('Y-m-d H:i:s');
             $induk -> login($con,$user,$pass);
+            
 		}
 		include("view/login.php");
 	}
     else if ($p=="logout")
     {
+        
         session_start();
+        $kejadian="Logout";
+         $loginfo=date('d-m-Y H:i:s').' - '.$user.' - '.$kejadian;
+         tulisLog($loginfo);
         session_destroy();
+        
         header('location:?p=login');
             
     }
@@ -98,7 +105,9 @@ if(!empty($_GET["p"]))
             $jenis=$_POST['jenis'];
             $satuan=$_POST['satuan'];
             $harga=$_POST['harga'];
+            $user=$_SESSION["username"];
             $input=$item->simpan($con,$nmitem,$jenis,$satuan,$harga);
+            
         }
         
         if (!empty($_GET['edit']))

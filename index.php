@@ -7,6 +7,7 @@ $namaDB			= "appkasir";
 
 //KONEKSI KE DATABASE
 $con = mysqli_connect($hostDB,$usernameDB,$passwordDB,$namaDB);
+$con2 = mysqli_connect('localhost','root','','log_kasir');
 
 //CEK KONEKSI
 if(mysqli_connect_error())
@@ -35,6 +36,7 @@ $transaksi = new transaksi;
 include ("mod/member.php");
 $member = new member;
 
+include ("mod/log.php");
 //AMBIL CONTROLLERS
 include("control/rute.php");
 

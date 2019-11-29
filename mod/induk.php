@@ -28,6 +28,9 @@ function login($con,$user,$pass)
                 session_start();
                 $_SESSION["username"]=$user;
                 $_SESSION["level"]=$b['level'];
+                $kejadian="berhasil login";
+                $loginfo=date('d-m-Y H:i:s').' - '.$user.' - '.$kejadian;
+                tulisLog($loginfo);
                 header("location:?p=kas");
                     
             }
@@ -35,6 +38,9 @@ function login($con,$user,$pass)
         }else
         {
             echo '<script>alert("MAAF, USERNAME/PASSWORD SALAH, SILAHKAN ULANGI KEMBALI ATAU HUBUNGI ADMIN");window.location.href=""</script>';
+            $kejadian="Gagal Login";
+            $loginfo=date('d-m-Y H:i:s').' - '.$user.' - '.$kejadian;
+            tulisLog($loginfo);
         }
     }
     
@@ -93,11 +99,15 @@ function login($con,$user,$pass)
         }
     }
     
-    
+    function loging($con2,$waktu,$username,$aktifitas)
+    {
+       
+        $q=mysqli_query($con2,"insert into log value('','$waktu','$username','$username','$aktifitas')");
+    }
     
     
 	
-	}
+}
     
 
 

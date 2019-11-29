@@ -4,13 +4,20 @@ class item{
     
     function simpan($con,$nmitem,$jenis,$satuan,$harga)
     {
+        
         $q=mysqli_query($con,"insert into item values('','$nmitem','$jenis','$satuan','$harga')");
         if ($q)
         {
             echo '<script>alert("DATA ITEM BERHASIL DISIMPAN");window.location.href="";</script>';
+            $kejadian="berhasil simpan item";
+            $loginfo=date('d-m-Y H:i:s').'-'.$user.'-'.$kejadian;
+            tulisLog($loginfo);
         }else
         {
             echo '<script>alert("DATA GAGAL DISIMPAN, ULANGI LAGI");window.location.href="";</script>';
+            $kejadian="gagal simpan item";
+            $loginfo=date('d-m-Y H:i:s').'-'.$user.'-'.$kejadian;
+            tulisLog($loginfo);
         }
     }
     
