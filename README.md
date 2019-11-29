@@ -1,2 +1,0 @@
-# kasirgit
-aplikasi kasir designer
