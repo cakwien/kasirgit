@@ -1,6 +1,7 @@
 <?php 
 class desain{
     
+    //TAMPILKAN DATA DESAIN
     function tampil($con,$iduser)
     {
         $list=array();
@@ -13,7 +14,7 @@ class desain{
         
        
     }
-    
+    //TAMPILKAN CLIENT PER MASING-MASING DESAIN
     function tpclient($con)
     {
         $list=array();
@@ -35,7 +36,7 @@ class desain{
         }
         return $list;
     }
-    
+    // TAMPILKAN DATA PEMBAYARAN
     function tpbayar($con,$iddesain)
     {
         $q=mysqli_query($con,"select * from desain join user on desain.iduser=user.iduser join item on item.iditem=desain.iditem where desain.iddesain='$iddesain'");

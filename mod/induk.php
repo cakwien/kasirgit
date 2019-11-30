@@ -1,6 +1,12 @@
-<?php 
+<?php
+
+
+
+
 class induk{
 
+    
+    //LOGIN SESUAI USERNAME $ PASSWORD
 function login($con,$user,$pass)
 	{
 		$q=mysqli_query($con,"select * from user where username='$user' and pass='$pass'");
@@ -9,6 +15,7 @@ function login($con,$user,$pass)
         {
             $a=mysqli_query($con,"select level from user where username='$user'");
             $b=mysqli_fetch_array($a);
+            //LOGIN LEVEL DESAINER
             if ($b['level']=="des")
             {
                 session_start();
@@ -16,14 +23,18 @@ function login($con,$user,$pass)
                 $_SESSION["level"]= $b['level'];
                 header("location:?p=des");
                 
-            }else if ($b['level']=="kas")
+            }
+            //LOGIN LEVEL KASIR
+            else if ($b['level']=="kas")
             {
                 session_start();
                 $_SESSION["username"] = $user;
                 $_SESSION["level"]= $b['level'];
                 header("location:?p=kas");
                 
-            }else if ($b['level']=="adm")
+            }
+            //LOGIN LEVEL ADMIN/OWNER
+            else if ($b['level']=="adm")
             {
                 session_start();
                 $_SESSION["username"]=$user;
