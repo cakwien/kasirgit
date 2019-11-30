@@ -1,7 +1,9 @@
 <?php
-
-
-
+// **********************************************
+// fungsi login multiuser pada tiap user aplikasi
+// code writing : Noval Harwien (cakwien)
+// date         : 15 Juni 2019
+// **********************************************
 
 class induk{
 
@@ -9,7 +11,7 @@ class induk{
     //LOGIN SESUAI USERNAME $ PASSWORD
 function login($con,$user,$pass)
 	{
-		$q=mysqli_query($con,"select * from user where username='$user' and pass='$pass'");
+		$q=mysqli_query($con,"select * from user where username='$user' and pass= '$pass'");
         $cek=mysqli_fetch_array($q);
         if (!empty($cek[0]))
         {
