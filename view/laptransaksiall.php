@@ -1,7 +1,34 @@
 <script>
-    window.print();
+    //window.print();
     //setTimeout(function(){window.location.href='?p=laptransaksi1'},3000)
+    
+    
+    
+    
+    
 </script>
+
+<?php
+require ('../vendor/autoload.php');
+
+// autoloader when using RPM or DEB package installation
+//require ('/usr/share/php/Com/Tecnick/Pdf/autoload.php');
+
+$pdf = new \Com\Tecnick\Pdf\Tcpdf();
+
+$pdf->page->add();
+
+$doc = $pdf->getOutPDFString();
+
+//var_export($doc);
+
+file_put_contents('../target/example.pdf', $doc);
+
+?>
+
+
+
+
 
 <TITLE>Invoice</TITLE>
 <style type="text/css">
