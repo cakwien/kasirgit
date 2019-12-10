@@ -24,6 +24,33 @@ if(empty($idclient))
             </div>
             <!-- /.box-header -->
             <!-- form start -->
+            
+     <!-- Pilih Client dulu -->
+            <form class="form-horizontal" method="GET" action="" >
+            
+                 <div class="form-group">
+                  <label class="col-sm-2 control-label">Nama Client :</label>
+                  <div class="col-sm-4">
+                      <select class="form-control select2" name="idclient">
+                          <?php 
+                          $dt=$member->tampil($con);
+                          echo '<option> Pilih Member </option>';
+                          foreach ($dt as $isi)
+                          {
+                          ?>
+                        <option value="<?php echo $isi['idclient']; ?>"><?php 
+                              echo $isi['nmclient']." | ".$isi['alamat'];
+                            ?> 
+                          
+                          </option>
+                          <?php } ?>
+                      </select>
+                    
+                  </div>
+                   
+                </div>
+    
+            </form>
             <form class="form-horizontal" method="POST" action="">
               <div class="box-body">
                     <div class="form-group">
