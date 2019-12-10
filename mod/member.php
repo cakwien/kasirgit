@@ -64,6 +64,13 @@ class member{
         return $st;
     }
     
+    function nmclient($con,$idclient)
+    {
+        $q=mysqli_query($con,"select nmclient from client where idclient='$idclient'");
+        $nm=mysqli_fetch_array($q);
+        return $nm;
+    }
+    
    
 }
 

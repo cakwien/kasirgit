@@ -46,6 +46,11 @@ if(!empty($_GET["p"]))
         include("view/admin.php");
     }
     
+    else if ($p=="client")
+    {
+        include("view/des.php");
+    }
+    
     else if ($p=="inclient")
     {
         if (!empty($_POST['submit']))
@@ -176,7 +181,7 @@ if(!empty($_GET["p"]))
         {
             $iddesain=$_GET['edit'];
             $dt=$desain->edit($con,$iddesain);
-            $nmclient=$dt['nmclient'];
+            $idclient=$dt['idclient'];
             $iditem=$dt['iditem'];
             $panjang=$dt['p'];
             $lebar=$dt['l'];
@@ -186,13 +191,13 @@ if(!empty($_GET["p"]))
         }else
         {
             $iddesain="";
-            $nmclient="";
+            $idclient=$_GET['idclient'];
             $iditem="";
             $panjang="";
             $lebar="";
             $iduser="";
             $ket="";
-            $wktdesain="";
+            $wktdesain=date('Y-m-d');
         }
         
         

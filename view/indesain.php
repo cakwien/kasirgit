@@ -1,19 +1,3 @@
-<?php
-$q=mysqli_query($con,"select * from client order by idclient desc limit 1");
-$cek=mysqli_fetch_array($q);
-$id=$cek['idclient'];
-
-
-if(empty($idclient))
-{
-    $idclient=$id;
-    $nmclient=$cek['nmclient'];
-    $wktdesain=date('Y-m-d');
-}
-
-
-
-?>
 
 <section class="content">
       <div class="row">
@@ -26,34 +10,11 @@ if(empty($idclient))
             <!-- form start -->
             
      <!-- Pilih Client dulu -->
-            <form class="form-horizontal" method="GET" action="" >
             
-                 <div class="form-group">
-                  <label class="col-sm-2 control-label">Nama Client :</label>
-                  <div class="col-sm-4">
-                      <select class="form-control select2" name="idclient">
-                          <?php 
-                          $dt=$member->tampil($con);
-                          echo '<option> Pilih Member </option>';
-                          foreach ($dt as $isi)
-                          {
-                          ?>
-                        <option value="<?php echo $isi['idclient']; ?>"><?php 
-                              echo $isi['nmclient']." | ".$isi['alamat'];
-                            ?> 
-                          
-                          </option>
-                          <?php } ?>
-                      </select>
-                    
-                  </div>
-                   
-                </div>
-    
-            </form>
+      
             <form class="form-horizontal" method="POST" action="">
               <div class="box-body">
-                    <div class="form-group">
+                  <div class="form-group">
                   <label class="col-sm-2 control-label">Waktu :</label>
                   <div class="col-sm-3">
                      
@@ -63,30 +24,15 @@ if(empty($idclient))
                   </div>
                 </div>
                   
-                <div class="form-group">
-                  <label class="col-sm-2 control-label">Nama Client :</label>
-                  <div class="col-sm-4">
-                      <select class="form-control select2" name="idclient">
-                          <?php 
-                          $dt=$member->tampil($con);
-                          echo '<option> Pilih Member </option>';
-                          foreach ($dt as $isi)
-                          {
-                          ?>
-                        <option value="<?php echo $isi['idclient']; ?>"><?php 
-                              echo $isi['nmclient']." | ".$isi['alamat'];
-                            ?> 
-                          
-                          </option>
-                          <?php } ?>
-                      </select>
-                    
-                  </div>
-                    <div class="col-sm-1">
-                         <a href="?p=inclient" class="btn btn-warning">Tambah Client</a>
-                    </div>
+                        <div class="form-group">
+                  <label class="col-sm-2 control-label">Client :</label>
+                  <div class="col-sm-3">
+                     <input type="hidden" class="form-control" name="idclient" placeholder="---" value="<?php echo $_GET['idclient']; ?>" readonly>
+                     <input type="text" class="form-control" name="nmclient" placeholder="---" value="<?php $nm=$member->nmclient($con,$idclient); echo $nm['nmclient']; ?>" readonly>
                 </div>
-
+                </div>
+                  
+     
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Jenis Item :</label>
                     <div class="col-sm-4">
@@ -171,15 +117,15 @@ if(empty($idclient))
                   <tbody>
                   <?php
                   $iduser=$aktif['iduser'];
-                  $data = $desain->tampil($con,$iduser);
+                  $data = $desain->listorder($con,$_GET['idclient'],$wktdesain,$iduser);
                   $no=1;
                   foreach($data as $isi){
                   ?>
                   
                 <tr>
-                  <td> <?php echo $no; ?> </td>
-                  <td> <?php echo tgl_indo($isi['wktdesain']); ?> </td>
-                  <td> <?php echo $isi['nmclient']; ?> </td>
+                  <td><?php echo $no; ?> </td>
+                  <td><?php echo tgl_indo($isi['wktdesain']); ?> </td>
+                  <td><?php echo $isi['nmclient']; ?> </td>
                   <td><?php echo $isi['nmitem']; ?></td>
                   <td><?php echo $isi['ket']; ?></td>
                   <td><?php echo $isi['p']; ?> x <?php echo $isi['l']; ?> (<?php echo $isi['satuan']; ?>)</td>

@@ -110,8 +110,8 @@ if(empty($_SESSION['username']))
           
        
  
-       <li class="<?php if ($p=="indes"){echo "active";} else {echo"";} ?>">
-          <a href="?p=indes">
+       <li class="<?php if ($p=="client"){echo "active";} else {echo"";} ?>">
+          <a href="?p=client">
             <i class="fa fa-tag"></i>
             <span>Project</span>
           </a>
@@ -151,6 +151,10 @@ if(empty($_SESSION['username']))
         else if ($p=="inclient")
         {
             require_once("inclient.php");
+        }
+        else if ($p=="client")
+        {
+            require_once("indesain2.php");
         }
         
         

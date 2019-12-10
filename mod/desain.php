@@ -139,10 +139,10 @@ class desain{
         return $q;
     }
     
-    function listorder($con,$id,$tgl)
+    function listorder($con,$id,$tgl,$id2)
     {
         $list=array();
-        $q=mysqli_query($con,"select * from desain join item on desain.iditem=item.iditem where desain.idclient='$id' and wktdesain='$tgl'");
+        $q=mysqli_query($con,"select * from desain join item on desain.iditem=item.iditem join client on desain.idclient=client.idclient where desain.idclient='$id' and wktdesain='$tgl' and iduser='$id2'");
         while($data=mysqli_fetch_array($q))
         {
             $list[]=$data;
