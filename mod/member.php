@@ -7,10 +7,10 @@ class member{
         $q=mysqli_query($con,"insert into client value('','$nmclient','$alamat','$nohp','$tgl','$status')");
         if($q)
         {
-            echo '<script>alert("Data Member ditambahkan");window.location.href="?p=indes";</script>';
+            echo '<script>alert("Data Member ditambahkan");window.location.href="?p=client";</script>';
         }else
         {
-             echo '<script>alert("Data Member Gagal ditambahkan");window.location.href="?p=indes";</script>'; 
+             echo '<script>alert("Data Member Gagal ditambahkan");window.location.href="?p=client";</script>'; 
         }
             
     }
@@ -31,10 +31,10 @@ class member{
         $q=mysqli_query($con,"delete from client where idclient='$idclient'");
         if($q)
         {
-            $msg="Member berhasil di hapus";
+             echo '<script>alert("Data Member Dihapus");window.location.href="?p=client";</script>';
         }else
         {
-            $msg="Member gagal dihapus";
+             echo '<script>alert("Data Member Gagal Dihapus");window.location.href="?p=client";</script>';
         }
     }
     

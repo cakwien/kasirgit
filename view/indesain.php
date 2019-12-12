@@ -135,8 +135,8 @@
                         if ($isi['status']=="0")
                         {
                         ?>
-                        <a href="?p=indes&edit=<?php echo $isi['iddesain']; ?>" class="btn-xs btn-info"> EDIT</a> 
-                        <a href="?p=dtdes&hapus=<?php echo $isi['iddesain']; ?>"class="btn-xs btn-danger">HAPUS</a>  
+                        <a href="?p=indes&idclient=<?php echo $isi['idclient']; ?>&edit=<?php echo $isi['iddesain']; ?>" class="btn-xs btn-info"> EDIT</a> 
+                        <a href="?p=dtdes&idclient=<?php echo $isi['idclient']; ?>&hapus=<?php echo $isi['iddesain']; ?>"class="btn-xs btn-danger">HAPUS</a>  
                         <?php
                       }
                       else

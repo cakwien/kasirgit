@@ -9,3 +9,11 @@
 09-12-2019 07:46:30 - admin - Gagal Login
 09-12-2019 07:46:36 - admin - Gagal Login
 11-12-2019 00:29:56 - admin - Gagal Login
+11-12-2019 01:50:56 -  - Logout
+11-12-2019 01:51:02 - admin - berhasil login
+11-12-2019 01:52:00 -  - Logout
+11-12-2019 08:30:08 - admin - berhasil login
+11-12-2019 08:31:17 -  - Logout
+11-12-2019 08:31:28 - wien - Gagal Login
+12-12-2019 08:33:44 - admin - berhasil login
+12-12-2019 08:38:26 -  - Logout

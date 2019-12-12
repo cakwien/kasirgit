@@ -48,6 +48,11 @@ if(!empty($_GET["p"]))
     
     else if ($p=="client")
     {
+        if (!empty($_GET['hapus']))
+        {
+            $idclient=$_GET['hapus'];
+            $member->hapus($con,$idclient);
+        }
         include("view/des.php");
     }
     
