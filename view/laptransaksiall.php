@@ -8,29 +8,9 @@
     
 </script>
 
-<?php
-require ('../vendor/autoload.php');
-
-// autoloader when using RPM or DEB package installation
-//require ('/usr/share/php/Com/Tecnick/Pdf/autoload.php');
-
-$pdf = new \Com\Tecnick\Pdf\Tcpdf();
-
-$pdf->page->add();
-
-$doc = $pdf->getOutPDFString();
-
-//var_export($doc);
-
-file_put_contents('../target/example.pdf', $doc);
-
-?>
 
 
-
-
-
-<TITLE>Invoice</TITLE>
+<TITLE>Laporan Transaksi</TITLE>
 <style type="text/css">
  table.minimalistBlack {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
@@ -103,11 +83,11 @@ include("mod/tglindo.php");
               </thead>
               
               <?php 
-             // $tgl1=$_POST['tgl1'];
-              //$tgl2=$_POST['tgl2'];
-              $dt=$transaksi->laptransaksiall($con);
+              
+                  $dt=$transaksi->laptransaksiall($con);
+             
+              
               $no=1;
-                
               foreach($dt as $isi)
               {
               ?>

@@ -73,12 +73,20 @@
 
   <div class="row">   
 <div class="col-xs-12">
-          <div class="box">
+             <div class="box">
+              
+                <div class="box-header with-border">
+             
+                <input type="submit" name="del" value="Hapus" class="btn btn-danger">
+                    
+            </div>
+              
             <div class="box-body">
               <table id="example1" class="table table-bordered table-hover">
             <thead>      
                 <tr>
                   <th style="width: 10px">#</th>
+                  <th style="width: 10px">No</th>
                   <th>Nama Item</th>
                   <th>Jenis Item</th>
                   <th>Satuan</th>
@@ -86,14 +94,19 @@
                  <th>Option</th>
                 </tr>
                   </thead>                               
-                  <?php
+               
+                  <tbody>
+                      <?php
                    $data = $item->tampil($con);
                   $no=1;
                   foreach($data as $isi){
                   ?>
-                  <tbody>
                 <tr>
-                  <td> <?php echo $no; ?> </td>
+                    
+                       
+                    
+                  <td> <input type="checkbox" name="iditem[]" value="<?php echo $isi['iditem']; ?>"></td>
+                  <td> <?php echo $no; ?></td>
                   <td> <?php echo $isi['nmitem']; ?></td>
                   <td> <?php echo $isi['jenis']; ?> </td>
                   <td><?php echo $isi['satuan']; ?></td>
@@ -101,9 +114,11 @@
                     <td><a href="?p=initem&edit=<?php echo $isi['iditem']; ?>" class="btn-xs btn-info"> EDIT</a> 
                         <a href="?p=initem&hapus=<?php echo $isi['iditem']; ?>"class="btn-xs btn-danger">HAPUS</a>  
                     </td>
+                    
                 </tr>
+                       <?php $no++; } ?>
                   </tbody>
-                  <?php $no++; } ?>
+                 
                   
               </table>
             </div>

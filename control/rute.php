@@ -259,7 +259,7 @@ if(!empty($_GET["p"]))
     {
         $tgl1=$_POST['tgl1'];
         $tgl2=$_POST['tgl2'];
-        include("view/laptransaksi.php");
+        include("view/laptransaksiall.php");
               
     }
     

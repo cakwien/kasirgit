@@ -1,19 +1,13 @@
-29-11-2019 23:56:35 - admin - berhasil login
-29-11-2019 23:56:38 -  - Logout
-29-11-2019 23:57:03 - admin - berhasil login
-29-11-2019 23:57:07 -  - Logout
-03-12-2019 15:11:33 - admin - Gagal Login
-03-12-2019 15:12:48 - admin - berhasil login
-03-12-2019 15:29:04 -  - Logout
-04-12-2019 09:15:03 - admin - Gagal Login
-09-12-2019 07:46:30 - admin - Gagal Login
-09-12-2019 07:46:36 - admin - Gagal Login
-11-12-2019 00:29:56 - admin - Gagal Login
-11-12-2019 01:50:56 -  - Logout
-11-12-2019 01:51:02 - admin - berhasil login
-11-12-2019 01:52:00 -  - Logout
-11-12-2019 08:30:08 - admin - berhasil login
-11-12-2019 08:31:17 -  - Logout
-11-12-2019 08:31:28 - wien - Gagal Login
-12-12-2019 08:33:44 - admin - berhasil login
-12-12-2019 08:38:26 -  - Logout
+17-12-2019 11:41:00 -  - Logout
+17-12-2019 11:41:10 - admin - Gagal Login
+17-12-2019 11:41:17 - admin - berhasil login
+17-12-2019 12:56:40 - admin - Gagal Login
+17-12-2019 12:56:51 - admin - Gagal Login
+17-12-2019 12:56:57 - admin - berhasil login
+17-12-2019 14:16:39 - admin - berhasil login
+17-12-2019 14:24:54 -  - Logout
+17-12-2019 16:34:16 -  - Logout
+24-12-2019 20:14:16 - admin - berhasil login
+24-12-2019 20:17:04 - admin - berhasil login
+24-12-2019 20:17:11 -  - Logout
+24-12-2019 20:19:16 - admin - berhasil login

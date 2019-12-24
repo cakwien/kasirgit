@@ -149,5 +149,17 @@ class desain{
         }
         return $list;
     }
+    
+    //TAMPILKAN CLIENT YANG MEMPUNYAI PESANAN YANG BELOM LUNAS
+    function tampilclientorder($con)
+    {
+        $list=array();
+        $q=mysqli_query($con,"select * from desain join item on desain.iditem=item.iditem join client on desain.idclient=client.idclient where desain.idclient='$id' and wktdesain='$tgl' ");
+        while($data=mysqli_fetch_array($q))
+        {
+            $list[]=$data;
+        }
+        return $list;
+    }
 }
 ?>
